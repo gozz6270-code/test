@@ -108,6 +108,7 @@
           if (achievement === null) {
             value.style.visibility = "hidden";
             value.setAttribute("aria-hidden", "true");
+            value.textContent = "\u00A0";
           } else {
             value.textContent = achievement.toFixed(1) + "%";
           }
