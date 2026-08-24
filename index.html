@@ -13,8 +13,10 @@
       .edges { pointer-events: none; z-index: 0; }
       .nodes { z-index: 1; }
       .edge { fill: none; stroke: #b5c3db; stroke-width: 4; stroke-linecap: butt; stroke-linejoin: miter; }
-      .node { position: absolute; display: flex; align-items: center; padding: 36px; border: 2px solid #b1b1b1; border-radius: 20px; background: #fdfdfd; color: #a7a7a7; font-size: 30px; font-weight: 500; line-height: 40px; letter-spacing: -1.2px; word-break: break-word; -webkit-tap-highlight-color: transparent; }
-      .node.unit-title { justify-content: center; border-color: #ecf2fd; background: #ecf2fd; color: #111; font-size: 34px; letter-spacing: -1.36px; text-align: center; }
+      .node { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; padding: 36px; border: 2px solid #b1b1b1; border-radius: 20px; background: #fdfdfd; color: #a7a7a7; font-size: 30px; font-weight: 500; line-height: 40px; letter-spacing: -1.2px; word-break: break-word; }
+      .node.unit-title { align-items: center; justify-content: center; border-color: #ecf2fd; background: #ecf2fd; color: #111; font-size: 34px; letter-spacing: -1.36px; text-align: center; }
+      .node-label { display: block; align-self: stretch; height: 62px; flex-shrink: 0; line-height: 40px; text-box-trim: trim-both; text-box-edge: cap alphabetic; }
+      .node-achievement { align-self: stretch; flex-shrink: 0; line-height: 40px; text-box-trim: trim-both; text-box-edge: cap alphabetic; }
       .node.state-weak { border-color: #ff9fff; background: #fff4ff; color: #a12ea1; }
       .node.state-good { border-color: #20c6ea; background: #e9fbff; color: #0d6376; }
       .node.state-excellent { border-color: #5de351; background: #f5fff4; color: #1b6714; }
@@ -22,7 +24,7 @@
   </head>
   <body>
     <div id="viewport" class="viewport"><div id="map" class="map"><svg id="edges" class="edges" aria-hidden="true"></svg><div id="nodes" class="nodes"></div></div></div>
-    <script id="concept-map-data" type="application/json">{"nodesData":{"mapWidth":1842,"mapHeight":1780,"nodes":[{"id":"unit-title","label":"1. 소수와 합성수","type":"unit-title","x":0,"y":0,"width":1842,"height":150},{"id":"K000001","label":"일차식이 되게 하는 계수 또는 상수항 구하기(30.4%)","type":"knowledge-node","state":"weak","x":90,"y":190,"width":348,"height":150,"achievement":85.4},{"id":"K000002","label":"일차식의 계산의 응용 (39.2%)","type":"knowledge-node","state":"excellent","x":528,"y":190,"width":348,"height":150,"achievement":25.4},{"id":"K000003","label":"방정식과 항등식(38.6%)","type":"knowledge-node","state":"weak","x":966,"y":190,"width":348,"height":150,"achievement":99.9},{"id":"K000004","label":"식의 값(29.4%)","type":"knowledge-node","state":"good","x":1404,"y":190,"width":348,"height":150,"achievement":84},{"id":"K000005","label":"거리, 속력, 시간에 대한 일차방정식의 활용 ","type":"knowledge-node","state":"good","x":528,"y":430,"width":348,"height":150,"achievement":99.2},{"id":"K000006","label":"사분면","type":"knowledge-node","state":"weak","x":528,"y":670,"width":348,"height":150,"achievement":58.8},{"id":"K000007","label":"정비례와 반비례 관계의 그래프의 활용","type":"knowledge-node","state":"default","x":1404,"y":670,"width":348,"height":150,"achievement":43.2},{"id":"K000009","label":"수직선 위의 점을 나타내는 수","type":"knowledge-node","state":"excellent","x":966,"y":910,"width":348,"height":150,"achievement":45.5},{"id":"K000008","label":"정비례 관계식","type":"knowledge-node","state":"weak","x":528,"y":910,"width":348,"height":150,"achievement":22.2},{"id":"K000010","label":"유리수의 덧셈과 뺄셈의 혼합계산","type":"knowledge-node","state":"default","x":1404,"y":1150,"width":348,"height":150,"achievement":0},{"id":"K000011","label":"약수의 개수 구하기","type":"knowledge-node","state":"default","x":1404,"y":1390,"width":348,"height":150,"achievement":0},{"id":"K000012","label":"소수와 합성수","type":"knowledge-node","state":"default","x":1404,"y":1630,"width":348,"height":150,"achievement":0}]},"edgesData":{"style":{"stroke":"#B5C3DB","strokeWidth":4,"nodeGap":16,"arrow":{"width":58,"height":23.094,"path":"M58 11.547L38 0V23.094L58 11.547ZM0 11.547V13.547H40V11.547V9.54701H0V11.547Z","shortWidth":29,"shortPath":"M29 11.547L9 0V23.094L29 11.547ZM0 11.547V13.547H11V11.547V9.54701H0V11.547Z"}},"edges":[{"name":"K000001-K000002","sources":["K000001"],"targets":["K000002"],"paths":[{"d":"M454 265 H512","markerEnd":true}]},{"name":"K000002-K000003","sources":["K000002"],"targets":["K000003"],"paths":[{"d":"M892 265 H950","markerEnd":true}]},{"name":"K000003-K000004","sources":["K000003"],"targets":["K000004"],"paths":[{"d":"M1330 265 H1388","markerEnd":true}]},{"name":"K000002, K000004-K000005, K000007","sources":["K000002","K000004"],"targets":["K000005","K000007"],"paths":[{"d":"M702 356 V385 V414","markerEnd":true,"arrowSize":"short"},{"d":"M702 385 H1578","markerEnd":false,"sources":["K000002"],"targets":["K000007"]},{"d":"M1578 385 V654","markerEnd":true,"arrowSize":"short","sources":["K000002"],"targets":["K000007"]},{"d":"M1578 356 V385","markerEnd":false,"sources":["K000004"],"targets":["K000007"]}]},{"name":"K000005-K000006, K000008","sources":["K000005"],"targets":["K000006","K000008"],"paths":[{"d":"M512 505 H483 V745 H512","markerEnd":true,"arrowSize":"short"},{"d":"M483 745 V985","markerEnd":false,"sources":["K000005"],"targets":["K000008"]},{"d":"M483 985 H512","markerEnd":true,"arrowSize":"short","sources":["K000005"],"targets":["K000008"]}]},{"name":"K000008-K000009","sources":["K000008"],"targets":["K000009"],"paths":[{"d":"M892 985 H950","markerEnd":true}]},{"name":"K000006, K000005-K000009","sources":["K000006","K000005"],"targets":["K000009"],"paths":[{"d":"M892 745 H1140 V894","markerEnd":true,"arrowSize":"short"},{"d":"M892 505 H1140","markerEnd":false,"sources":["K000005"],"targets":["K000009"]},{"d":"M1140 505 V745","markerEnd":false,"sources":["K000005"],"targets":["K000009"]}]},{"name":"K000007-K000009","sources":["K000007"],"targets":["K000009"],"paths":[{"d":"M1578 836 V985 H1330","markerEnd":true,"arrowSize":"short"}]},{"name":"K000005-K000006","sources":["K000005"],"targets":["K000006"],"paths":[{"d":"M702 596 V654","markerEnd":true}]},{"name":"K000006-K000008","sources":["K000006"],"targets":["K000008"],"paths":[{"d":"M702 836 V894","markerEnd":true}]},{"name":"K000004-K000010, K000011, K000012","sources":["K000004"],"targets":["K000010","K000011","K000012"],"paths":[{"d":"M1768 265 H1797 V1225 H1768","markerEnd":true,"arrowSize":"short"},{"d":"M1797 1225 V1465","markerEnd":false,"sources":["K000004"],"targets":["K000011"]},{"d":"M1797 1465 H1768","markerEnd":true,"arrowSize":"short","sources":["K000004"],"targets":["K000011"]},{"d":"M1797 1465 V1705","markerEnd":false,"sources":["K000004"],"targets":["K000012"]},{"d":"M1797 1705 H1768","markerEnd":true,"arrowSize":"short","sources":["K000004"],"targets":["K000012"]}]},{"name":"K000009-K000011, K000012","sources":["K000009"],"targets":["K000011","K000012"],"paths":[{"d":"M1140 1076 V1345 H1578 V1374","markerEnd":true,"arrowSize":"short"},{"d":"M1140 1345 V1585","markerEnd":false,"sources":["K000009"],"targets":["K000012"]},{"d":"M1140 1585 H1578","markerEnd":false,"sources":["K000009"],"targets":["K000012"]},{"d":"M1578 1585 V1614","markerEnd":true,"arrowSize":"short","sources":["K000009"],"targets":["K000012"]}]}]}}</script>
+    <script id="concept-map-data" type="application/json">{"nodesData":{"mapWidth":1842,"mapHeight":2298,"nodes":[{"id":"unit-title","label":"1. 소인수분해","type":"unit-title","x":0,"y":0,"width":1842,"height":130},{"id":"K000001","label":"일차식이 되게 하는 계수 또는 상수항 구하기","type":"knowledge-node","state":"good","x":90,"y":180,"width":348,"height":186,"achievement":48.5},{"id":"K000002","label":"복잡한 일차방정식의 풀이","type":"knowledge-node","state":"weak","x":528,"y":180,"width":348,"height":186,"achievement":54.3},{"id":"K000003","label":"거리, 속력, 시간에 대한 일차방정식의 활용 ","type":"knowledge-node","state":"good","x":528,"y":456,"width":348,"height":186,"achievement":66.2},{"id":"K000004","label":"꼭짓점의 좌표가 주어진 도형의 넓이","type":"knowledge-node","state":"good","x":966,"y":456,"width":348,"height":186,"achievement":46.2},{"id":"K000005","label":"반비례 관계식","type":"knowledge-node","state":"excellent","x":966,"y":732,"width":348,"height":186,"achievement":22},{"id":"K000006","label":"정비례 관계의 그래프","type":"knowledge-node","state":"default","x":966,"y":1008,"width":348,"height":186,"achievement":0},{"id":"K000007","label":"대칭인 점의 좌표 ","type":"knowledge-node","state":"good","x":1404,"y":1008,"width":348,"height":186,"achievement":44.9},{"id":"K000008","label":"수에 대한 일차방정식의 활용","type":"knowledge-node","state":"default","x":1404,"y":1284,"width":348,"height":186,"achievement":0},{"id":"K000010","label":"등식 ","type":"knowledge-node","state":"default","x":966,"y":1560,"width":348,"height":186},{"id":"K000011","label":"최대공약수와 최소공배수 사이의 관계","type":"knowledge-node","state":"default","x":1404,"y":1560,"width":348,"height":186},{"id":"K000013","label":"소수와 합성수","type":"knowledge-node","state":"default","x":1404,"y":1836,"width":348,"height":186},{"id":"K000012","label":"소인수분해를 이용하여 약수 구하기","type":"knowledge-node","state":"default","x":966,"y":1836,"width":348,"height":186},{"id":"K000014","label":"최대공약수","type":"knowledge-node","state":"default","x":966,"y":2112,"width":348,"height":186},{"id":"K000015","label":"소수와 합성수","type":"knowledge-node","state":"default","x":1404,"y":2112,"width":348,"height":186}]},"edgesData":{"style":{"stroke":"#B5C3DB","strokeWidth":4,"nodeGap":16,"arrow":{"width":58,"height":23.094,"path":"M58 11.547L38 0V23.094L58 11.547ZM0 11.547V13.547H40V11.547V9.54701H0V11.547Z","shortWidth":29,"shortPath":"M29 11.547L9 0V23.094L29 11.547ZM0 11.547V13.547H11V11.547V9.54701H0V11.547Z"}},"edges":[{"name":"K000001-K000002, K000003","sources":["K000001"],"targets":["K000002","K000003"],"paths":[{"d":"M454 273 H512","markerEnd":true},{"d":"M483 273 V549","markerEnd":false,"sources":["K000001"],"targets":["K000003"]},{"d":"M483 549 H512","markerEnd":true,"arrowSize":"short","sources":["K000001"],"targets":["K000003"]}]},{"name":"K000002-K000004","sources":["K000002"],"targets":["K000004"],"paths":[{"d":"M892 273 H1140 V440","markerEnd":true,"arrowSize":"short"}]},{"name":"K000003-K000004","sources":["K000003"],"targets":["K000004"],"paths":[{"d":"M892 549 H950","markerEnd":true}]},{"name":"K000004-K000005","sources":["K000004"],"targets":["K000005"],"paths":[{"d":"M1140 658 V716","markerEnd":true}]},{"name":"K000005-K000007","sources":["K000005"],"targets":["K000007"],"paths":[{"d":"M1330 825 H1578 V992","markerEnd":true,"arrowSize":"short"}]},{"name":"K000007-K000008","sources":["K000007"],"targets":["K000008"],"paths":[{"d":"M1768 1101 H1797 V1377 H1768","markerEnd":true,"arrowSize":"short"}]},{"name":"K000006-K000008","sources":["K000006"],"targets":["K000008"],"paths":[{"d":"M1140 1210 V1239 H1578 V1268","markerEnd":true,"arrowSize":"short"}]},{"name":"K000005-K000006","sources":["K000005"],"targets":["K000006"],"paths":[{"d":"M1140 934 V992","markerEnd":true}]},{"name":"K000008-K000011, K000010","sources":["K000008"],"targets":["K000011","K000010"],"paths":[{"d":"M1578 1486 V1544","markerEnd":true},{"d":"M1578 1515 H1140","markerEnd":false,"sources":["K000008"],"targets":["K000010"]},{"d":"M1140 1515 V1544","markerEnd":true,"arrowSize":"short","sources":["K000008"],"targets":["K000010"]}]},{"name":"K000010-K000012","sources":["K000010"],"targets":["K000012"],"paths":[{"d":"M1140 1762 V1820","markerEnd":true}]},{"name":"K000012-K000014","sources":["K000012"],"targets":["K000014"],"paths":[{"d":"M1140 2038 V2096","markerEnd":true}]},{"name":"K000011-K000013","sources":["K000011"],"targets":["K000013"],"paths":[{"d":"M1578 1762 V1820","markerEnd":true}]},{"name":"K000013-K000015","sources":["K000013"],"targets":["K000015"],"paths":[{"d":"M1578 2038 V2096","markerEnd":true}]}]}}</script>
     <script>
       var data = JSON.parse(document.getElementById("concept-map-data").textContent);
       var SVG_NS = "http://www.w3.org/2000/svg";
@@ -87,27 +89,29 @@
             svg.appendChild(path);
           }
         }
-        function addAchievementToggle(element, node) {
-          var achievement = Number(node.achievement);
-          if (
-            node.type !== "knowledge-node" ||
-            node.achievement === undefined ||
-            node.achievement === null ||
-            node.achievement === "" ||
-            !isFinite(achievement)
-          ) {
+        function nodeAchievement(node) {
+          var value = Number(node.achievement);
+          return isFinite(value) && value > 0 ? value : null;
+        }
+        function renderNodeContent(element, node) {
+          if (node.type === "unit-title") {
+            element.textContent = node.label;
             return;
           }
-          element.style.cursor = "pointer";
-          element.addEventListener("click", function () {
-            if (element.getAttribute("data-showing-achievement") === "true") {
-              element.textContent = node.label;
-              element.setAttribute("data-showing-achievement", "false");
-            } else {
-              element.textContent = achievement.toFixed(1) + "%";
-              element.setAttribute("data-showing-achievement", "true");
-            }
-          });
+          var label = document.createElement("span");
+          label.className = "node-label";
+          label.textContent = node.label;
+          element.appendChild(label);
+          var achievement = nodeAchievement(node);
+          var value = document.createElement("span");
+          value.className = "node-achievement";
+          if (achievement === null) {
+            value.style.visibility = "hidden";
+            value.setAttribute("aria-hidden", "true");
+          } else {
+            value.textContent = achievement.toFixed(1) + "%";
+          }
+          element.appendChild(value);
         }
         for (nodeIndex = 0; nodeIndex < nodesData.nodes.length; nodeIndex += 1) {
           var node = nodesData.nodes[nodeIndex];
@@ -117,8 +121,8 @@
           element.style.top = node.y + "px";
           element.style.width = node.width + "px";
           element.style.height = node.height + "px";
-          element.textContent = node.label; nodes.appendChild(element);
-          addAchievementToggle(element, node);
+          renderNodeContent(element, node);
+          nodes.appendChild(element);
         }
         function fit() {
           var scale = Math.min(1, viewport.clientWidth / nodesData.mapWidth);
